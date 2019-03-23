@@ -15,4 +15,20 @@ public class OrderForm extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private OrderState orderState;
+
+    public Set<OrderedProduct> getOrderedProducts() {
+        return orderedProducts;
+    }
+
+    public void setOrderedProducts(Set<OrderedProduct> orderedProducts) {
+        this.orderedProducts = orderedProducts;
+    }
+
+    public OrderState getOrderState() {
+        return orderState;
+    }
+
+    public void setOrderState(OrderState orderState) {
+        this.orderState = orderState;
+    }
 }

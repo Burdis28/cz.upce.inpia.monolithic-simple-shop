@@ -4,5 +4,6 @@ public enum OrderState {
     NEW,
     IN_DELIVERY,
     DELIVERED,
-    CANCELED
+    CANCELED,
+    ARCHIVED
 }
