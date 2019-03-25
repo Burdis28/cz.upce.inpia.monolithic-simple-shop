@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/header :: head(title='Orders')"></head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="uk-container">
+  <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+    <div class="uk-card uk-card-default uk-card-body" th:each="order_form: ${orders}">
+      <h2 th:text="${order_form.id}">Order ID</h2>
+      <h2 th:text="${order_form.orderState}">Order state</h2>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
