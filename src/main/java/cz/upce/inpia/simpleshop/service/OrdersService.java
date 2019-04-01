@@ -7,4 +7,6 @@ public interface OrdersService {
 
   List<OrderForm> findAllOrders();
 
+  OrderForm findById(Integer orderId);
+
 }

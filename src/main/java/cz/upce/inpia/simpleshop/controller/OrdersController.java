@@ -17,9 +17,8 @@ public class OrdersController {
   }
 
   @GetMapping("/listOrders")
-  public String showCart(Model model) {
+  public String showOrders(Model model) {
     model.addAttribute("orders", ordersService.findAllOrders());
     return "orders-list";
   }
-
 }

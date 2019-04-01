@@ -8,7 +8,12 @@
     <div class="uk-card uk-card-default uk-card-body" th:each="order_form: ${orders}">
       <h2 th:text="${order_form.id}">Order ID</h2>
       <h2 th:text="${order_form.orderState}">Order state</h2>
-
+      <div class="uk-card uk-card-default uk-card-body" th:each="orderedProduct: ${order_form.orderedProducts}">
+        <p>
+          <span th:text="${orderedProduct.amount}">Product amount</span>x
+          <span th:text="${orderedProduct.product.name}">Product name</span>
+        </p>
+      </div>
     </div>
   </div>
 </div>

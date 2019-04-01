@@ -2,9 +2,8 @@ package cz.upce.inpia.simpleshop.service;
 
 import cz.upce.inpia.simpleshop.dao.OrderFormDao;
 import cz.upce.inpia.simpleshop.entity.OrderForm;
-import cz.upce.inpia.simpleshop.entity.Product;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -29,4 +28,15 @@ public class OrdersServiceImpl implements OrdersService {
   public List<OrderForm> findAllOrders() {
     return orderFormDao.findAll();
   }
+
+  @Override
+  public OrderForm findById(Integer orderId) {
+    if (orderFormDao.findById(orderId).isPresent()) {
+      return orderFormDao.findById(orderId).get();
+    } else {
+      throw new NoSuchElementException("Order with ID: " + orderId + " was not found!");
+    }
+  }
+
+
 }
