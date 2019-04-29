@@ -5,12 +5,12 @@
     <title>Javascript demo</title>
 
     <style>
-        #product-list {
+        #orders-list {
             margin: auto;
             width: 200px;
         }
 
-        .product {
+        .order {
             border: 1px solid black;
             margin: 10px;
             padding: 10px;
@@ -21,11 +21,11 @@
 
 <div id="orders-list"></div>
 
-<button onclick="loadProducts();">Load orders</button>
+<button onclick="loadOrders();">Load orders</button>
 
 <script>
 
-    function loadProducts() {
+    function loadOrders() {
         var apiAddress = "http://localhost:8080/api/orders";
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
